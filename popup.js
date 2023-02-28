@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
   function extractImageURL() {
     chrome.tabs.executeScript({
-      code: 'var previewDiv = document.querySelector("div.preview"); previewDiv.style.backgroundImage.match(/url\\((.*?)\\)/)[1];'
+      code: 'var previewDiv = document.querySelector("div.preview_l, div.preview"); previewDiv.style.backgroundImage.match(/url\\((.*?)\\)/)[1];'
     }, function(results) {
       var imageURL = results[0];
       if (imageURL) {
